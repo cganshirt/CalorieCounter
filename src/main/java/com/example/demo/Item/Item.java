@@ -1,27 +1,74 @@
 package com.example.demo.Item;
 
-public class Item {
-    private String name;
-    private int portion;
-    private String portionName;
-    private int calories;
 
-    public Item(String name, int portion, String portionName, int calories) {
-        this.name = name;
-        this.portion = portion;
-        this.portionName = portionName;
-        this.calories = calories;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "items")
+
+public class Item {
+    @Id
+    @Column(name = "id")
+    private String id;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "foodgroup")
+    private String foodGroup;
+    @Column(name = "calories")
+    private Double calories;
+    @Column(name = "fat")
+    private Double fat;
+    @Column(name = "protein")
+    private Double protein;
+    @Column(name = "carbohydrates")
+    private Double carbohydrates;
+    @Column(name = "sugars")
+    private Double sugars;
+    @Column(name = "fiber")
+    private Double fiber;
+    @Column(name = "netcarbs")
+    private Double netcarbs;
+
+    public String getId() {
+        return id;
     }
+
     public String getName() {
-        return this.name;
+        return name;
     }
-    public int getPortion() {
-        return this.getPortion();
+
+    public String getFoodGroup() {
+        return foodGroup;
     }
-    public String getPortionName(){
-        return this.portionName;
+
+    public Double getCalories() {
+        return calories;
     }
-    public int getCalories(){
-        return this.calories;
+
+    public Double getFat() {
+        return fat;
+    }
+
+    public Double getProtein() {
+        return protein;
+    }
+
+    public Double getCarbohydrates() {
+        return carbohydrates;
+    }
+
+    public Double getSugars() {
+        return sugars;
+    }
+
+    public Double getFiber() {
+        return fiber;
+    }
+
+    public Double getNetcarbs() {
+        return netcarbs;
     }
 }
